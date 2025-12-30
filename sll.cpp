@@ -1,19 +1,19 @@
 #include "sll.h"
 
 void createList(List &L) {
-    L.first = nullptr;
+    L.first = NULL;
 }
 
 address createNewElm(infotype x) {
     address p = new elmList;
     p->info = x;
-    p->next = nullptr;
+    p->next = NULL;
     return p;
 }
 
-void tambahData(List &L, infotype dataBaru) {
-    address p = createNewElm(dataBaru);
-    if (L.first == nullptr) {
+void tambahData(List &L, infotype x) {
+    address p = createNewElm(x);
+    if (L.first == NULL) {
         L.first = p;
     } else {
         p->next = L.first;
@@ -22,13 +22,13 @@ void tambahData(List &L, infotype dataBaru) {
 }
 
 address panenTerbanyak(List L) {
-    if (L.first == nullptr) {
-        return nullptr;
+    if (L.first == NULL) {
+        return NULL;
     } else {
         address p = L.first;
         address pMax = p;
 
-        while (p != nullptr) {
+        while (p != NULL) {
             if (p->info.jumlah > pMax->info.jumlah) {
                 pMax = p;
             }
@@ -40,19 +40,11 @@ address panenTerbanyak(List L) {
 
 void panenBulanan(List L, string bln) {
     address p = L.first;
-    bool ditemukan = false;
-
-    cout << "Hasil panen bulan " << bln << ": ";
-    while (p != nullptr) {
+    while (p != NULL) {
         if (p->info.bulan == bln) {
             cout << p->info.nama << " ";
-            ditemukan = true;
         }
         p = p->next;
-    }
-
-    if (!ditemukan) {
-        cout << "Tidak ada data";
     }
     cout << endl;
 }
