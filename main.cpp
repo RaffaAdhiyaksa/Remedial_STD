@@ -5,8 +5,9 @@ using namespace std;
 
 int main() {
     List L;
-    createList(L);
     infotype data;
+
+    createList(L);
 
     data = {"Wortel", "Januari", 500};
     tambahData(L, data);
@@ -23,17 +24,17 @@ int main() {
     data = {"Padi", "Februari", 1000};
     tambahData(L, data);
 
-    cout << "=== DATA PANEN ===" << endl;
-
-    address pMax = panenTerbanyak(L);
-    if (pMax != NULL) {
-        cout << "Panen Terbanyak: " << pMax->info.nama
-             << " (" << pMax->info.jumlah << " kg)" << endl;
+    address hasil = panenTerbanyak(L);
+    if (hasil != NULL) {
+        cout << "Panen Terbanyak: " << hasil->info.nama
+             << " (" << hasil->info.jumlah << " kg)" << endl;
     }
 
+    cout << "Panen Bulan Maret: ";
     panenBulanan(L, "Maret");
+
+    cout << "Panen Bulan Februari: ";
     panenBulanan(L, "Februari");
-    panenBulanan(L, "Januari");
 
     return 0;
 }
