@@ -26,8 +26,8 @@ struct List {
 
 void createList(List &L);
 address createNewElm(infotype x);
-void tambahData(List &L, infotype dataBaru);
+void tambahData(List &L, infotype x);
 address panenTerbanyak(List L);
 void panenBulanan(List L, string bln);
 
-#endif // SLL_H_INCLUDED
+#endif
